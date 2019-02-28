@@ -1,0 +1,18 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Marka</th>
+      <th scope="col">Model</th>
+      <th scope="col">Rok produkcji</th>
+      <th scope="col">Akcje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicle of vehicles">
+      <td>{{vehicle.make}}</td>
+      <td>{{vehicle.model}}</td>
+      <td>{{vehicle.productionYear}}</td>
+      <td><a (click)="deleteVehicle($event, vehicle.id)"><i class="fas fa-trash"></i></a></td>
+    </tr>
+  </tbody>
+</table>
