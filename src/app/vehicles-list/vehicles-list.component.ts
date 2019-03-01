@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../shared/vehicle-service/vehicle.service';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-vehicles-list',
@@ -10,7 +12,7 @@ export class VehiclesListComponent implements OnInit {
 
   vehicles: Array<any>;
 
-  constructor(private vehicleService: VehicleService) { }
+  constructor(private vehicleService: VehicleService, private router: Router) { }
 
   ngOnInit() {
     this.vehicleService.getAllVehicles().subscribe(data => {
@@ -21,6 +23,11 @@ export class VehiclesListComponent implements OnInit {
   deleteVehicle(event, id)
   {
     this.vehicleService.deleteVehicle(id);
+  }
+
+  getVehicleDetails(event, id)
+  {
+    this.router.navigate(['/vehicle-details'], id);
   }
 
 }

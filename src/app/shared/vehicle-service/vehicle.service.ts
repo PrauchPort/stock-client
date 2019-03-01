@@ -14,6 +14,10 @@ export class VehicleService {
     return this.http.get('http://localhost:8080/api/vehicles/');
   }
 
+  getVehicleById(id: string) {
+    return this.http.get('http://localhost:8080/api/vehicles/'+id);
+  }
+
   createVehicle(vehicle): Observable<any> {
     return this.http.post('http://localhost:8080/api/vehicles/', vehicle);
   }
