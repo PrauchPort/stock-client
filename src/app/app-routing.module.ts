@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { VehiclesListComponent } from './vehicles-list/vehicles-list.component';
 import { AddVehicleComponent } from './add-vehicle/add-vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { VehicleOrdersListComponent } from './vehicle-orders-list/vehicle-orders-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path : 'register', component: RegisterComponent},
   { path: 'vehicles', component: VehiclesListComponent},
   { path: 'add-vehicle', component: AddVehicleComponent},
-  { path: 'vehicles/:id', component: VehicleDetailsComponent}
+  { path: 'vehicles/:id', component: VehicleDetailsComponent},
+  { path: 'vehicle-orders-list', component: VehicleOrdersListComponent}
 ];
 
 @NgModule({

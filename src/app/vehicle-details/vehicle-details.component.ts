@@ -22,9 +22,31 @@ export class VehicleDetailsComponent implements OnInit {
   ngOnInit() {
     this.vehicleService.getVehicleById(this.id).subscribe( data =>
       {
-        console.log(data);
         this.vehicle = data;
+        document.getElementById("vehicle").style.display = "block";
+        document.getElementsByClassName("tablinks")[0].className += " active";
       });
+
   }
 
+  openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontents, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontents = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontents.length; i++) {
+      tabcontents[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
 }
