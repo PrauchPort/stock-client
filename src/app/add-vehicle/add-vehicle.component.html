@@ -1,0 +1,21 @@
+<div class="col-md-6">
+    <h2 class="text-center">Dodaj Pojazd</h2>
+    <form [formGroup]="addVehicleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="make">Marka:</label>
+        <input formControlName="make" placeholder="Marka" name="make" class="form-control" id="make">
+      </div>
+    
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input formControlName="model" placeholder="Model" name="model" class="form-control" id="model">
+      </div>
+    
+      <div class="form-group">
+        <label for="address">Rok Produkcji:</label>
+       <input formControlName="productionYear" placeholder="Rok Produkcji" name="productionYear" class="form-control" id="productionYear">
+      </div>
+    
+      <button class="btn btn-success">Stwórz</button>
+    </form>
+  </div>

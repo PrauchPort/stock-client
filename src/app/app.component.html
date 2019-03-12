@@ -1,28 +1,54 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Stock</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="logout()">Logout</a>
-      </li>
-    </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+          <h3>Transporter</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+          <li>
+              <a href="#homeSubmenu">Home</a>
+          </li>
+          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pojazdy</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                  <li>
+                      <a href="#" routerLinkActive="active" routerLink="/vehicles">Moje Pojazdy</a>
+                  </li>
+                  <li>
+                      <a href="#" routerLinkActive="active" routerLink="/add-vehicle">Dodaj Pojazd</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Kursy</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu2">
+                <li>
+                    <a href="#" routerLinkActive="active" routerLink="/vehicle-orders-list">Moje Kursy</a>
+                </li>
+                <li>
+                    <a href="#" routerLinkActive="active" routerLink="/add-vehicle-order">Dodaj Kurs</a>
+                </li>
+            </ul>
+        </li>
+          <li>
+              <a href="#">Kontakt</a>
+          </li>
+      </ul>
+
+  </nav>
+
+  <div class="container">            
+    <router-outlet></router-outlet>
   </div>
-</nav>
 
-<div class="container">
-  <router-outlet></router-outlet>
 </div>
+
+
+
