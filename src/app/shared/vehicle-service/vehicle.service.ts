@@ -23,6 +23,7 @@ export class VehicleService {
   }
 
   deleteVehicle(id: string) {
+    console.log("Deleting http://localhost:8080/api/vehicles/"+id);
     return this.http.delete('http://localhost:8080/api/vehicles/'+id);
   }
 
