@@ -12,7 +12,7 @@ export class VehiclesListComponent implements OnInit {
 
   vehicles: Array<any>;
 
-  constructor(private vehicleService: VehicleService, private router: Router) { }
+  constructor(private vehicleService: VehicleService, private router: Router) {   }
 
   ngOnInit() {
     this.vehicleService.getAllVehicles().subscribe(data => {
@@ -22,12 +22,10 @@ export class VehiclesListComponent implements OnInit {
 
   deleteVehicle(event, id)
   {
-    this.vehicleService.deleteVehicle(id);
-  }
+    console.log("Delete vehicle with id: " + id);
 
-  getVehicleDetails(event, id)
-  {
-    this.router.navigate(['/vehicle-details'], id);
+    this.vehicleService.deleteVehicle(id).subscribe();
+    this.vehicles = this.vehicles.filter(vehicle => vehicle.id != id);
   }
 
 }

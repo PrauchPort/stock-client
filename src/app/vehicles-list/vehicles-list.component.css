@@ -1,3 +1,7 @@
 .fas {
     margin-right: 0.6em;
 }
+
+a:hover {
+ cursor: pointer; 
+}
